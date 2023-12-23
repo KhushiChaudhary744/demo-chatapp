@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+<form method="post" class="buttons">
+  <h3>Enter The Chat Room</h3>
+  <div class = 'Infobox'>
+      <div class="name">
+        <label>Name:</label>
+        <input
+          type="text"
+          placeholder="Pick a name!"
+          name="name"
+          class="nameinp"
+          value="{{name}}"
+        />
+      </div>
+
+      <div class="join">
+        <label class="roomLab">Room Number: </label>
+        <input 
+          type="text"
+          placeholder="Room Code"
+          class="roominp" 
+          name="code" 
+          value="{{code}}" 
+        />
+
+        <button type="submit" name="join" class="roombtn"> <img src="static\img\arrow.png" /> </button>
+
+      </div>
+
+      <button type="submit" name="create" class="create-btn">Create a Room</button>
+      {% if error %}
+      <ul class="error">
+        <li>{{error}}</li>
+      </ul>
+      {% endif %}
+    </div>
+</form>
+{% endblock %}
